@@ -11,70 +11,74 @@ import { FaDiscord } from "react-icons/fa";
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-dvh overflow-hidden">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center scale-110"
-        style={{ backgroundImage: "url('/bg.webp')" }}
+        style={{
+          backgroundImage:
+            "url('https://nhatthanhtranho.github.io/landing-page/bg.webp')",
+        }}
       />
 
       {/* Dark gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90" />
 
-      {/* Radial glow center */}
+      {/* Radial glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_60%)]" />
 
-      <main className="relative min-h-screen flex items-center justify-center px-4">
-        {/* Floating card */}
+      <main className="relative min-h-dvh flex items-center justify-center px-4 py-8">
         <div
           className="
-            w-full max-w-md lg:max-w-lg
+            relative
+            w-full
+            max-w-sm sm:max-w-md lg:max-w-lg
             rounded-3xl
             bg-white/10
             backdrop-blur-2xl
             border border-white/20
             shadow-[0_25px_80px_rgba(0,0,0,0.7)]
-            p-6
-            flex flex-col justify-between
+            p-5 sm:p-6
+            flex flex-col
           "
         >
-          {/* Inner depth layer */}
+          {/* Inner glow */}
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
 
           {/* Header */}
-          <div className="relative flex items-center gap-4 mb-8">
-            <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-600 p-[2px] shadow-xl">
+          <div className="relative flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+            <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-600 p-[2px] shadow-xl">
               <div className="w-full h-full rounded-2xl overflow-hidden bg-black">
                 <img
-                  src="/icon.webp"
+                  src="https://nhatthanhtranho.github.io/landing-page/icon.webp"
                   alt="Icon Ngọc Tiêu Các"
                   className="w-full h-full object-cover"
                 />
               </div>
             </div>
 
-            <h1 className="text-3xl font-semibold text-yellow-300 tracking-wide drop-shadow-xl">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-yellow-300 tracking-wide drop-shadow-xl">
               Ngọc Tiêu Các
             </h1>
           </div>
 
           {/* Buttons */}
-          <div className="relative space-y-4">
+          <div className="relative space-y-3 sm:space-y-4">
             <LandingButton
               href="https://ngoctieucac.org"
-              text="Truy cập Website ngoctieucac.org"
+              text="Truy cập Website"
               icon={<Globe size={18} />}
             />
 
             <LandingButton
               href="#"
-              text="Tải ứng dụng cho iPhone/iPad"
+              text="Tải ứng dụng iPhone/iPad"
               icon={<Apple size={18} />}
             />
 
             <LandingButton
               href="#"
-              text="Tải ứng dụng cho Android"
+              text="Tải ứng dụng Android"
               icon={<Play size={18} />}
             />
 
@@ -86,7 +90,7 @@ export default function HomePage() {
 
             <LandingButton
               href="https://discord.gg/VQuVg7XU"
-              text="Tham gia Discord cộng đồng"
+              text="Tham gia Discord"
               icon={<FaDiscord size={18} />}
               discord
             />
@@ -118,19 +122,19 @@ function LandingButton({
         relative
         flex items-center justify-between
         rounded-2xl
-        px-5 py-4
+        px-4 sm:px-5
+        py-3 sm:py-4
+        text-sm sm:text-base
         transition-all duration-300
         shadow-[0_8px_30px_rgba(0,0,0,0.4)]
         hover:shadow-[0_15px_45px_rgba(0,0,0,0.6)]
-        hover:-translate-y-1
-        active:translate-y-0
+        active:scale-[0.98]
         ${discord
           ? "bg-[#5865F2] text-white"
           : "bg-white/90 backdrop-blur-md"
         }
       `}
     >
-      {/* subtle top light */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/30 to-transparent opacity-20 pointer-events-none" />
 
       <span
@@ -144,7 +148,8 @@ function LandingButton({
       <div
         className={`
           relative
-          w-9 h-9 rounded-full flex items-center justify-center
+          w-8 h-8 sm:w-9 sm:h-9
+          rounded-full flex items-center justify-center
           transition-all duration-300
           ${discord
             ? "bg-white/20 text-white group-hover:bg-white/30"
