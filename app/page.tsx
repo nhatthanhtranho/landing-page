@@ -65,7 +65,7 @@ export default function HomePage() {
           {/* Buttons */}
           <div className="relative space-y-3 sm:space-y-4">
             <LandingButton
-              href="https://ngoctieucac.org"
+              href="https://tienphu.top"
               text="Truy cập Website"
               icon={<Globe size={18} />}
             />
